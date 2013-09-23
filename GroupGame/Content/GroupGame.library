@@ -1,0 +1,21 @@
+ContentLibrary = 
+{
+	string Name = "GroupGame",
+	Array Files = 
+	[
+		"CameraScript.py",
+		"Game.data",
+		"IDCheck.py",
+		"ID_0.Archetype.data",
+		"ID_1.Archetype.data",
+		"ID_2.Archetype.data",
+		"ID_76.Archetype.data",
+		"Level.data",
+		"LevelStructure.py",
+		"PlayerControl.py",
+		"Space.data",
+	],
+	uint64 LibraryId = 52707ae85d3b4bf7,
+	string SourceControlType = "",
+	bool ReadOnly = false,
+},
