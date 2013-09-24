@@ -4,15 +4,16 @@ ContentLibrary =
 	Array Files = 
 	[
 		"CameraScript.py",
+		"EnemyAI1.py",
 		"Game.data",
 		"IDCheck.py",
 		"ID_0.Archetype.data",
 		"ID_1.Archetype.data",
+		"ID_100.Archetype.data",
 		"ID_2.Archetype.data",
 		"ID_76.Archetype.data",
 		"Level.data",
 		"LevelStructure.py",
-		"LocalTime.py",
 		"PlayerControl.py",
 		"Space.data",
 	],

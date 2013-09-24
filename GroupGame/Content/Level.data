@@ -45,6 +45,9 @@ Level =
 		PlayerControl = 
 		{
 		},
+		EnemyAI1 = 
+		{
+		},
 	},
 	Cog = 
 	{
@@ -58,9 +61,9 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-2.18557e-006, 0, 90],
+			Vec3 Translation = [-0.485004, -0.1725, 90],
 			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, -2.18557e-008, -0, 1],
+			Quat Rotation = [0, -2.17557e-008, -0, 1],
 		},
 		Camera = 
 		{
@@ -70,7 +73,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 5,
+			float Size = 6,
 		},
 		EditorCameraController = 
 		{
@@ -78,7 +81,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0, 0, 40],
+			Vec3 LookTarget = [-0.485001, -0.1725, 40],
 		},
 		EditorRenderer = 
 		{
@@ -109,7 +112,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 200,
-			float Size = 20,
+			float Size = 5,
 		},
 		CameraScript = 
 		{
@@ -249,6 +252,24 @@ Level =
 		},
 		IDCheck = 
 		{
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "520d4954d792bcce:ID_100",
+		LinkId = 
+		{
+			uint Id = 8,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.19, -0.11, -8.30516e-009],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "ID_100",
 		},
 	},
 },

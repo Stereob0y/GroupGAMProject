@@ -29,7 +29,7 @@ class LevelStructure:
         if (self.RoomID == 0): 
             self.RoomWidth = 8 
             self.RoomHeight = 6 
-            self.RoomArray = [1,1,1,2,2,1,1,1,1,0,0,0,0,0,0,1,2,0,0,0,0,0,0,2,2,76,0,0,0,0,0,2,1,0,0,0,0,0,0,1,1,1,1,2,2,1,1,1]
+            self.RoomArray = [1,1,1,2,2,1,1,1,1,0,0,0,0,0,0,1,2,0,0,0,0,0,0,2,2,76,0,0,0,0,0,2,1,0,0,0,0,100,0,1,1,1,1,2,2,1,1,1]
             
             
         elif (self.RoomID == 1):
@@ -40,6 +40,10 @@ class LevelStructure:
         
         for x in range(0, self.RoomWidth * self.RoomHeight): #Resize Previous Array to same size of Current Array with Junk data
             self.PrevRoomArray.append(1000)
+        
+        #Dump all data that is in the Enemy100Array
+        RoomStructure = self.Space.FindObjectByName("LevelSettings")
+        RoomStructure.EnemyAI1.EnemyDataArray = []
         
         #Render the Room first without checking for previous arrays since this is the first time rendering
         for IDNum in range(0, (self.RoomWidth * self.RoomHeight)):
@@ -60,6 +64,10 @@ class LevelStructure:
             if (self.RoomArray[IDNum] == 76):
                 self.CurrentPlayerPosition = IDNum
                 
+            #Get all enemys with ID 100
+            if (self.RoomArray[IDNum] == 100):
+                RoomStructure.EnemyAI1.EnemyDataArray.append(IDNum)
+                
             IDBlock = self.Space.CreateAtPosition("ID_" + str(self.RoomArray[IDNum]), Vec3( Locationx , Locationy , 1))
             if (IDBlock):
                 IDBlock.IDCheck.MyArrayNumber = IDNum
@@ -67,6 +75,8 @@ class LevelStructure:
                 
         
     def GenerateLevel(self, UpdateEvent):
+        #Reset the Enemy 100 Array before re-rendering
+        self.Enemy100Array = []
         
         for IDNum in range(0, (self.RoomWidth * self.RoomHeight)):
             
