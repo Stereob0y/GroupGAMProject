@@ -14,7 +14,7 @@ class CameraScript:
     def OnLogicUpdate(self, UpdateEvent):
         
         RoomStructure = self.Space.FindObjectByName("LevelSettings")
-        PlayerPosition = RoomStructure.LevelStructure.CurrentPlayerPosition
+        PlayerPosition = RoomStructure.PlayerControl.PlayerDataArray[0]
         RoomWidth = RoomStructure.LevelStructure.RoomWidth
         
         #Focus Camera on player; X position is obtained with Modulus; Y Position is obtained through a truncation of a fraction between Position and Width

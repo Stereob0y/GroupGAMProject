@@ -9,7 +9,6 @@ Vec3 = VectorMath.Vec3
 class LevelStructure:
     
     RoomID = 0
-    CurrentPlayerPosition = 0
     PrevRoomArray = []
     
     #Room Array Format Example
@@ -26,13 +25,13 @@ class LevelStructure:
         
     def LoadRoomArrayData(self, initializer): #See top of page for format example; See Google Docs for ID list
         
-        if (self.RoomID == 0): 
+        if (self.RoomID == 0):  #temp
             self.RoomWidth = 8 
             self.RoomHeight = 6 
-            self.RoomArray = [1,1,1,2,2,1,1,1,1,0,0,0,0,0,0,1,2,0,0,0,0,0,0,2,2,76,0,0,0,0,0,2,1,0,0,0,0,100,0,1,1,1,1,2,2,1,1,1]
+            self.RoomArray = [1,1,1,2,2,1,1,1,1,0,0,0,0,0,0,1,2,0,0,0,0,0,0,2,2,76,0,0,0,0,0,2,1,0,0,100,100,100,0,1,1,1,1,2,2,1,1,1]
             
             
-        elif (self.RoomID == 1):
+        elif (self.RoomID == 1):  #temp
             self.RoomWidth = 2
             self.RoomHeight = 8
             self.RoomArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -41,9 +40,11 @@ class LevelStructure:
         for x in range(0, self.RoomWidth * self.RoomHeight): #Resize Previous Array to same size of Current Array with Junk data
             self.PrevRoomArray.append(1000)
         
-        #Dump all data that is in the Enemy100Array
+        #Dump all data that is in all the data arrays, so that the system forgets the last build's data
         RoomStructure = self.Space.FindObjectByName("LevelSettings")
         RoomStructure.EnemyAI1.EnemyDataArray = []
+        RoomStructure.PlayerControl.PlayerDataArray = []
+        
         
         #Render the Room first without checking for previous arrays since this is the first time rendering
         for IDNum in range(0, (self.RoomWidth * self.RoomHeight)):
@@ -60,11 +61,11 @@ class LevelStructure:
             else:
                 Locationx += 1
             
-            #Get Player Position
+            #Get Player Position, place position in PlayerDataArray
             if (self.RoomArray[IDNum] == 76):
-                self.CurrentPlayerPosition = IDNum
+                RoomStructure.PlayerControl.PlayerDataArray.append(IDNum)
                 
-            #Get all enemys with ID 100
+            #Get all enemys with ID 100, place position in EnemyDataArray
             if (self.RoomArray[IDNum] == 100):
                 RoomStructure.EnemyAI1.EnemyDataArray.append(IDNum)
                 
@@ -92,9 +93,6 @@ class LevelStructure:
             else:
                 Locationx += 1
             
-            #Get Player Position
-            if (self.RoomArray[IDNum] == 76):
-                self.CurrentPlayerPosition = IDNum
                 
             if (self.RoomArray[IDNum] != self.PrevRoomArray[IDNum]):
                 

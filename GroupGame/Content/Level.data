@@ -48,6 +48,9 @@ Level =
 		EnemyAI1 = 
 		{
 		},
+		LocalTime = 
+		{
+		},
 	},
 	Cog = 
 	{
@@ -61,7 +64,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.485004, -0.1725, 90],
+			Vec3 Translation = [-0.485003, -0.1725, 90],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, -2.17557e-008, -0, 1],
 		},

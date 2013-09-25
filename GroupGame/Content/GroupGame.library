@@ -14,6 +14,7 @@ ContentLibrary =
 		"ID_76.Archetype.data",
 		"Level.data",
 		"LevelStructure.py",
+		"LocalTime.py",
 		"PlayerControl.py",
 		"Space.data",
 	],

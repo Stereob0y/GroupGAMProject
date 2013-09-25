@@ -11,7 +11,6 @@ class IDCheck:
     def OnLogicUpdate(self, UpdateEvent):
         
         RoomStructure = self.Space.FindObjectByName("LevelSettings")
-        PlayerPosition = RoomStructure.LevelStructure.CurrentPlayerPosition
         
         if (RoomStructure.LevelStructure.RoomArray[self.MyArrayNumber] != self.MyID):
             self.Owner.Destroy()
