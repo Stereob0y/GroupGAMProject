@@ -15,6 +15,8 @@ ContentLibrary =
 		"Level.data",
 		"LevelStructure.py",
 		"LocalTime.py",
+		"Pixel.Archetype.data",
+		"PixelLogic.py",
 		"PlayerControl.py",
 		"Space.data",
 	],
