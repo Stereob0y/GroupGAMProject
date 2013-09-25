@@ -11,8 +11,9 @@ class IDCheck:
     def OnLogicUpdate(self, UpdateEvent):
         
         RoomStructure = self.Space.FindObjectByName("LevelSettings")
+        RoomArray = RoomStructure.LevelStructure.RoomArray
         
-        if (RoomStructure.LevelStructure.RoomArray[self.MyArrayNumber] != self.MyID):
+        if (RoomArray[self.MyArrayNumber] != self.MyID):
             self.Owner.Destroy()
 
 Zero.RegisterComponent("IDCheck", IDCheck)

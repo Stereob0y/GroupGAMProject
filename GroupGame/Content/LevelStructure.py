@@ -45,7 +45,6 @@ class LevelStructure:
         RoomStructure.EnemyAI1.EnemyDataArray = []
         RoomStructure.PlayerControl.PlayerDataArray = []
         
-        
         #Render the Room first without checking for previous arrays since this is the first time rendering
         for IDNum in range(0, (self.RoomWidth * self.RoomHeight)):
             
@@ -69,6 +68,10 @@ class LevelStructure:
             if (self.RoomArray[IDNum] == 100):
                 RoomStructure.EnemyAI1.EnemyDataArray.append(IDNum)
                 
+            #************************************************************************************************
+            #What does this do?  And why the "if" if it will always be true?  How will it be false?
+            #Is this where it places the "IDNum" wich could be anything for instance a goblin or a player?
+            #************************************************************************************************
             IDBlock = self.Space.CreateAtPosition("ID_" + str(self.RoomArray[IDNum]), Vec3( Locationx , Locationy , 1))
             if (IDBlock):
                 IDBlock.IDCheck.MyArrayNumber = IDNum
@@ -93,7 +96,9 @@ class LevelStructure:
             else:
                 Locationx += 1
             
-                
+            #************************************************************************************
+            #When will this not run?
+            #************************************************************************************
             if (self.RoomArray[IDNum] != self.PrevRoomArray[IDNum]):
                 
                 self.PrevRoomArray[IDNum] = self.RoomArray[IDNum] #Set the Previous Room Array equal to the new Array
