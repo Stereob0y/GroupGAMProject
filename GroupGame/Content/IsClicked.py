@@ -2,6 +2,7 @@
 #ATTACH TO EACH ENEMY, THIS SCRIPT SENDS AN
 #EVENT FOR THE MENU TO READ WITH THE ENEMY
 #INFORMATION AND SPAWNS THE ENEMY
+#Hi Jordan
 #*******************************************
 
 import Zero
