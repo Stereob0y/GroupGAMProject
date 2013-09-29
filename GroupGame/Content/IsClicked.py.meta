@@ -1,0 +1,8 @@
+TextContent = 
+{
+	PyScriptBuilder = 
+	{
+		string Name = "IsClicked",
+		uint64 ResourceId = 5206828f5f224539,
+	},
+},

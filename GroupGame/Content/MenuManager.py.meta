@@ -1,0 +1,8 @@
+TextContent = 
+{
+	PyScriptBuilder = 
+	{
+		string Name = "MenuManager",
+		uint64 ResourceId = 520682cb27dc3d56,
+	},
+},

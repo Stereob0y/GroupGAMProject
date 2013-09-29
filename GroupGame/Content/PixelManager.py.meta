@@ -1,0 +1,8 @@
+TextContent = 
+{
+	PyScriptBuilder = 
+	{
+		string Name = "PixelManager",
+		uint64 ResourceId = 5206822928c6d4e0,
+	},
+},
