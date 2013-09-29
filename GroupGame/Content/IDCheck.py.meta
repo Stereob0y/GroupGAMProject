@@ -1,0 +1,8 @@
+TextContent = 
+{
+	PyScriptBuilder = 
+	{
+		string Name = "IDCheck",
+		uint64 ResourceId = 5273bb8330e0189b,
+	},
+},

@@ -44,7 +44,7 @@ class PixelLogic:
         if(TimeClass.IO):
             self.IdleMove()
         else:
-            pass
+            self.SlowMoMove()
         
     def IdleMove(self):
         #Adding every frame to the temp variable "i++"
@@ -64,8 +64,32 @@ class PixelLogic:
         #y = xsin(0) + ycos(0)
         PixelPosition.x = PixelPosition.x * math.cos(self.Rotation) - PixelPosition.y * math.sin(self.Rotation)
         PixelPosition.y = PixelPosition.x * math.sin(self.Rotation) + PixelPosition.y * math.cos(self.Rotation)
+        PixelPosition += Origin
         
         #Set the final position to the pixel
         self.Owner.Transform.Translation = PixelPosition
+        
+        def SlowMoMove(self):
+            #Adding every frame to the temp variable "i++"
+            self.Temp += self.moveSpeed
+            #Adding every frame to the rotation variable
+            self.Rotation += .001
+            #Define the origin of the pixels movement on the players position
+            Origin = self.Player.Transform.Translation
+            #Reset the pixels position before calculations
+            PixelPosition = Vec3(0,0,0)
+            
+            #For standard movement of pixel
+            PixelPosition += Vec3(math.cos(self.Temp), math.sin(self.Temp * 2), 0) * self.Scale
+            #Now we-
+            #Rotate the movement of the sin and cos curves
+            #x = xcos0 - ysin0
+            #y = xsin0 + ycos0
+            PixelPosition.x = PixelPosition.x*math.cos(self.Rotation) - PixelPosition.y*math.sin(self.Rotation)
+            PixelPosition.y = PixelPosition.x*math.sin(self.Rotation) + PixelPosition.y*math.cos(self.Rotation)
+            PixelPosition += Origin
+            
+            #Set the final position to the pixel
+            self.Owner.Transform.Translation = PixelPosition
 
 Zero.RegisterComponent("PixelLogic", PixelLogic)

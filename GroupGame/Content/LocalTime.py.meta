@@ -1,0 +1,8 @@
+TextContent = 
+{
+	PyScriptBuilder = 
+	{
+		string Name = "LocalTime",
+		uint64 ResourceId = 520ec3a4d76b6f28,
+	},
+},

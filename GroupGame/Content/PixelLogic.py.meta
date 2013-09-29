@@ -1,0 +1,8 @@
+TextContent = 
+{
+	PyScriptBuilder = 
+	{
+		string Name = "PixelLogic",
+		uint64 ResourceId = 520ccf44cd0206ad,
+	},
+},
